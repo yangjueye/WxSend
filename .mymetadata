@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="WxSend"
+  id="myeclipse.1539591941804"
+  context-root="/WxSend"
+  j2ee-spec="5.0"
+  archive="WxSend.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

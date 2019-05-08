@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name></display-name>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddServlet</servlet-name>
+    <servlet-class>com.jueye.wx.AddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OpenIdServlet</servlet-name>
+    <servlet-class>com.jueye.wx.OpenIdServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DollarServlet</servlet-name>
+    <servlet-class>com.jueye.wx.DollarServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetSign</servlet-name>
+    <servlet-class>com.jueye.wx.GetSign</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ToDollarServlet</servlet-name>
+    <servlet-class>com.jueye.wx.ToDollarServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UploadServlet</servlet-name>
+    <servlet-class>com.jueye.wx.UploadServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddVoiceServlet</servlet-name>
+    <servlet-class>com.jueye.wx.AddVoiceServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetNews</servlet-name>
+    <servlet-class>com.jueye.wx.GetNews</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetGg</servlet-name>
+    <servlet-class>com.jueye.wx.GetGg</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>AddServlet</servlet-name>
+    <url-pattern>/add</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OpenIdServlet</servlet-name>
+    <url-pattern>/getOpenId</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DollarServlet</servlet-name>
+    <url-pattern>/getDollar</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetSign</servlet-name>
+    <url-pattern>/getSign</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ToDollarServlet</servlet-name>
+    <url-pattern>/toDollar</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadServlet</servlet-name>
+    <url-pattern>/upload</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddVoiceServlet</servlet-name>
+    <url-pattern>/addvoice</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetNews</servlet-name>
+    <url-pattern>/getNews</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetGg</servlet-name>
+    <url-pattern>/getGg</url-pattern>
+  </servlet-mapping>	
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
