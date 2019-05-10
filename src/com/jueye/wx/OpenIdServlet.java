@@ -92,7 +92,7 @@ public class OpenIdServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}       	 		
-		      int dollar=3;
+		      int dollar=6;
 		      String boolid=DBManager.show(openid);
 		      String boolname=DBManager.showNickname(nickname);
 		      String sources = "0123456789";
