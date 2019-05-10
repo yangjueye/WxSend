@@ -69,6 +69,7 @@ public class AddServlet extends HttpServlet {
         String userphone = request.getParameter("userphone");
         String usercontens = request.getParameter("usercontens");
         usercontens = new String(usercontens.getBytes("iso8859-1"),"utf-8");
+        System.out.print(usercontens);
         String openid = request.getParameter("openid");
         System.out.print(userphone+usercontens);
        int charnum=getContentWordCount(usercontens);
