@@ -25,7 +25,7 @@ public class SMS {
 		//templateId7839对应的内容是"您的验证码是: {1}"
 		// 签名
 		String smsSign = "爵爷网";
-		String url=">>>她/他的留声https://jueyevip.top/WxSend/say/"+voicename+"，【微信小程序搜索爵爷微服务】";
+		String url=">>>她/他的留声https://jueyevip.top/WxSend/say/"+voicename+"，【微信小程序搜索爵爷传音】";
 		try {
 		    String[] params = {str+url};//数组具体的元素个数和模板中变量个数必须一致，例如事例中templateId:5678对应一个变量，参数数组中元素个数也必须是一个
 		    SmsSingleSender ssender = new SmsSingleSender(appid, appkey);
@@ -59,7 +59,7 @@ public class SMS {
 		//templateId7839对应的内容是"您的验证码是: {1}"
 		// 签名
 		String smsSign = "爵爷网";
-		String strs=str+"，【微信小程序搜索爵爷微服务】";
+		String strs=str+"，【微信小程序搜索爵爷传音】";
 		try {
 		    String[] params = {strs};//数组具体的元素个数和模板中变量个数必须一致，例如事例中templateId:5678对应一个变量，参数数组中元素个数也必须是一个
 		    SmsSingleSender ssender = new SmsSingleSender(appid, appkey);
