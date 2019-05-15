@@ -31,8 +31,11 @@ public class GetOpenid {
 //	String appid = "wxca5a393169a9fabc";
 //    String secret = "cc5b1affe393b88345c9ba4f6d045352";
 	//爵爷传音
-	String appid = "wxe800cf885f543230";
-  String secret = "e537b1e4af4808e35c6014a74cecee04";
+//	String appid = "wxe800cf885f543230";
+//  String secret = "e537b1e4af4808e35c6014a74cecee04";
+	//WxTravel
+	String appid = "wx725fd504deae1e31";
+  String secret = "5a090bd688ec6e436ef947d2b580d9e7";
     //可获取openid及session_key,其实这里openid不需要获取，encryptedData解密后包含openid
     public String get(String js_code) throws Exception {
         //官方接口，需要自己提供appid，secret和js_code

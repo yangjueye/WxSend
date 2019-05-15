@@ -169,7 +169,9 @@ public class DBManager {
 	    //根据openid查找是否重复
 	    public static String show(String openid){
 	         String sql ="select openid from wxuser";
+	       
 	         String status="";
+	      
 	         DBConnection db = new DBConnection();
 	         try {
 	            Statement stmt = (Statement) db.conn.createStatement();
@@ -185,6 +187,7 @@ public class DBManager {
 	        } catch (SQLException e) {
 	            e.printStackTrace();
 	        }
+	         
 			return status; 
 	    }
 	    //根据用户昵称查找是否重复
@@ -212,6 +215,8 @@ public class DBManager {
 	    public static String showuid(String openid){
 	         String sql ="select uid from wxuser where openid='"+openid+"'";
 	         String uid="";
+	      
+	         
 	         DBConnection db = new DBConnection();
 	         try {
 	            Statement stmt = (Statement) db.conn.createStatement();
@@ -225,6 +230,7 @@ public class DBManager {
 	        } catch (SQLException e) {
 	            e.printStackTrace();
 	        }
+	         
 			return uid; 
 	    }
 	    //根据uid返回用户剩余短信
