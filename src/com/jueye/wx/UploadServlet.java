@@ -30,7 +30,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 public class UploadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private String uploadFilePath = "D:\\upload";
+	private String uploadFilePath = "C:\\upload";
 	/**
 	 * Constructor of the object.
 	 */

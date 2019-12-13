@@ -18,7 +18,7 @@ public class DBConnection {
      */
 	
 	    String driver = "com.mysql.jdbc.Driver";
-	    String url= "jdbc:mysql://localhost:3306/wxsend";
+	    String url= "jdbc:mysql://localhost:3306/wxsend?useUnicode=true&amp;characterEncoding=GBK";
 	    String user = "root";
 	    String password = "8023";
 	    

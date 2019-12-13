@@ -65,8 +65,48 @@
     <servlet-name>UploadController</servlet-name>
     <servlet-class>com.jueye.wx.UploadController</servlet-class>
   </servlet>
-
-
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LatLong</servlet-name>
+    <servlet-class>com.jueye.wx.LatLong</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>chooseocrimg</servlet-name>
+    <servlet-class>com.jueye.wx.chooseocrimg</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CommunicationServlet</servlet-name>
+    <servlet-class>com.jueye.wx.CommunicationServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>dsfghsfdhdg</servlet-name>
+    <servlet-class>com.dao.db.dsfghsfdhdg</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddPeopleServlet</servlet-name>
+    <servlet-class>com.jueye.wx.AddPeopleServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ShowVoiceServlet</servlet-name>
+    <servlet-class>com.jueye.wx.ShowVoiceServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ShowUser</servlet-name>
+    <servlet-class>com.jueye.wx.ShowUser</servlet-class>
+  </servlet>
 
 
 
@@ -114,7 +154,35 @@
   <servlet-mapping>
     <servlet-name>UploadController</servlet-name>
     <url-pattern>/uploadcontroller</url-pattern>
-  </servlet-mapping>	
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LatLong</servlet-name>
+    <url-pattern>/latlon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>chooseocrimg</servlet-name>
+    <url-pattern>/ocrchoose</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CommunicationServlet</servlet-name>
+    <url-pattern>/communication</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>dsfghsfdhdg</servlet-name>
+    <url-pattern>/servlet/dsfghsfdhdg</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddPeopleServlet</servlet-name>
+    <url-pattern>/addpeople</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowVoiceServlet</servlet-name>
+    <url-pattern>/showvoicecode</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowUser</servlet-name>
+    <url-pattern>/showuser</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>

@@ -65,9 +65,9 @@ public class ToDollarServlet extends HttpServlet {
        
 		String openid=request.getParameter("openid");
         String uid=DBManager.showuid(openid);
-        String issign=DBManager.showuid("wxsign", uid);
-        if(issign.equals("sucess")){
-        int num=Integer.parseInt(DBManager.showstarssignsnum("wxsign", uid, "signs"));
+        boolean issign=DBManager.showrepeat("wxsign", uid, "uid");
+        if(!issign){
+        int num=DBManager.showstarssignsnum("wxsign", uid, "signs");
         if(num<7){
         	 Writer out = response.getWriter(); 		      
 		      out.write("距离"+(7-num)+"天！");
@@ -83,7 +83,7 @@ public class ToDollarServlet extends HttpServlet {
 		      out.flush(); 
         }
         }
-        else{
+        if(issign){
         	Writer out = response.getWriter(); 		      
 		      out.write("请先签到打卡！");
 		      out.flush(); 

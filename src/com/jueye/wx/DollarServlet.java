@@ -71,22 +71,14 @@ public class DollarServlet extends HttpServlet {
         String openid=request.getParameter("openid");
         //System.out.print("前台获取openid="+openid);
         String uid=DBManager.showuid(openid);
-        //返回值给微信小程序
-        Writer out = response.getWriter(); 
-        String dollar=DBManager.showdollarbyopenid(openid);
-        String stars=DBManager.showstarssignsnum("wxstar", uid, "stars");
-        String signs=DBManager.showstarssignsnum("wxsign", uid, "signs");
+        int dollar=DBManager.showdollarbyopenid(openid);
+        int stars=DBManager.showstarssignsnum("wxstar", uid, "stars");
+        int signs=DBManager.showstarssignsnum("wxsign", uid, "signs");
         String time=DBManager.showstarssignstime("wxsign", uid);
-        String privatetext=DBManager.showstarssignsnum("wxprivate", uid, "text");
-         if(stars.equals("") || stars.equals(null)){
-        	 stars+="0";
-         }
-         if(signs.equals("") || signs.equals(null)){
-        	 signs+="0";
-         }
-         if(dollar.equals("") || dollar.equals(null)){
-        	 dollar+="0";
-         }
+        String privatetext=DBManager.ShowStringByUid("wxprivate", uid, "text");
+       
+         //返回值给微信小程序
+        Writer out = response.getWriter(); 
         out.write(dollar+"?"+stars+"?"+uid+"?"+signs+"?"+time+"?"+privatetext);
         out.flush(); 
 	}

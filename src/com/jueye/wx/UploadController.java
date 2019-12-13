@@ -34,6 +34,19 @@ import org.json.JSONObject;
 
 import com.baidu.aip.ocr.AipOcr;
 import com.google.gson.JsonParser;
+import com.jueye.ocr.Animal;
+import com.jueye.ocr.CarType;
+import com.jueye.ocr.Dishes;
+import com.jueye.ocr.DriveAnalysis;
+import com.jueye.ocr.FruitVegetable;
+import com.jueye.ocr.GeneralObject;
+import com.jueye.ocr.GoodsRatio;
+import com.jueye.ocr.HumanAnalysis;
+import com.jueye.ocr.HumanNumber;
+import com.jueye.ocr.LandMark;
+import com.jueye.ocr.Plant;
+import com.jueye.ocr.PortraitSegmentation;
+import com.jueye.ocr.RedWine;
 
 public class UploadController extends HttpServlet {
 
@@ -79,14 +92,16 @@ public class UploadController extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
+		resp.setContentType("application/json;charset=utf-8");//指定返回的格式为JSON格式
 	    req.setCharacterEncoding("UTF-8");
 	  //允许跨域访问
         resp.setHeader("Access-Control-Allow-Origin","*");
         //设置各种过滤器
         req.setCharacterEncoding("UTF-8");
         resp.setCharacterEncoding("UTF-8");
-        resp.setContentType("UTF-8");
+    //    resp.setContentType("UTF-8");
         String ip="";
+        String ocrtype="";
         //输出请求的类型
         System.out.println(req.getContentType());
         //这一段是获取参数并且输出参数名和值，用的是常规方法
@@ -125,6 +140,9 @@ public class UploadController extends HttpServlet {
                         if(name.equals("ip")){
                         	ip+=value;
                         }
+                        if(name.equals("ocrtype")){
+                        	ocrtype+=value;
+                        }
                        // resp.getWriter().println(name + "\t" + value);
                     } else {
                         //如果不是表单域，则说明这是个文件，获取文件的相关信息并输出
@@ -139,7 +157,7 @@ public class UploadController extends HttpServlet {
 //                        out.write(url);
 //                        out.flush(); 
                         //既然已经拿到文件了（文件在内存里），那么就把它写到硬盘里吧
-                       // File file = new File(getServletConfig().getServletContext().getRealPath("testcore"), name);
+                    //    File files = new File(getServletConfig().getServletContext().getRealPath("testcore"), name);
                         String path = req.getRealPath("/ocrimages") + "/";
                         File dir = new File(path);
                         if (!dir.exists()) {
@@ -163,12 +181,99 @@ public class UploadController extends HttpServlet {
                   //     System.out.println(ip+"/WxSend/ocrimages/"+name);
          
                    //    String color=OcrCar.CarColor(ip+"/WxSend/ocrimages/"+name);
+                        //人体分析
+                        String accessToken="24.4bf52adddf1d5dec472d6761d153083a.2592000.1561098014.282335-16310393";
+                        if(ocrtype.equals("humananalysis")){
+                          JSONObject json = HumanAnalysis.humananalysis(paths);
+                          PrintWriter writer = resp.getWriter();
+                       
+                          writer.write(json.toString(2));
+                            } 
+                        //人像分割
+                        if(ocrtype.equals("portraitsegmentation")){
+                        	String imageurl = PortraitSegmentation.portraitsegmentation(paths);
+                        	 Writer out = resp.getWriter(); 
+                             out.write(imageurl);
+                             out.flush();
+                              } 
+                        //人流量统计
+                        if(ocrtype.equals("humannumber")){
+                        	  JSONObject json = HumanNumber.humannumber(paths);
+                              PrintWriter writer = resp.getWriter();
+                              writer.write(json.toString(2));
+                              } 
+                        //车型识别
+                        if(ocrtype.equals("cartype")){
+                        	  JSONObject json = CarType.cartype(paths);
+                              PrintWriter writer = resp.getWriter();
+                              writer.write(json.toString(2));
+                              } 
+                        //车牌号识别
+                        if(ocrtype.equals("carnum")){
                         String number=OcrCar.CarNumber(paths);
                         String color = OcrCar.CarColor(paths);
                         Writer out = resp.getWriter(); 
                         out.write("车牌颜色："+color+"车牌号码："+number);
-                        out.flush(); 
+                        out.flush();
+                        } 
+                        //驾驶行为分析
+                        if(ocrtype.equals("driveanalysis")){
+                        	  JSONObject json = DriveAnalysis.driveanalysis(paths);
+                              PrintWriter writer = resp.getWriter();
+                              writer.write(json.toString(2));
+                              } 
+                        //通用物体和场景识别
+                        if(ocrtype.equals("generalobject")){
+                        	  JSONObject json = GeneralObject.generalobject(paths);
+                              PrintWriter writer = resp.getWriter();
+                              writer.write(json.toString(2));
+                              } 
+
+                        //地标识别
+                        if(ocrtype.equals("landmark")){
+                        	  JSONObject json = LandMark.landmark(paths);
+                              PrintWriter writer = resp.getWriter();
+                              writer.write(json.toString(2));
+                              } 
+                      //植物识别
+                        if(ocrtype.equals("plant")){
+                        	  JSONObject json = Plant.plant(paths);
+                              PrintWriter writer = resp.getWriter();
+                              writer.write(json.toString(2));
+                              } 
+                      //动物识别
+                        if(ocrtype.equals("animal")){
+                        	  JSONObject json = Animal.animal(paths);
+                              PrintWriter writer = resp.getWriter();
+                              writer.write(json.toString(2));
+                              } 
+                      //果蔬识别
+                        if(ocrtype.equals("fruitvegetable")){
+                        	  String json = FruitVegetable.fruitvegetable(paths, accessToken);
+                              PrintWriter writer = resp.getWriter();
+                              writer.write(json);
+                              } 
+                      //菜品识别
+                        if(ocrtype.equals("dishes")){
+                        	  JSONObject json = Dishes.dishes(paths);
+                              PrintWriter writer = resp.getWriter();
+                              writer.write(json.toString(2));
+                              } 
+                      //红酒识别
+                        if(ocrtype.equals("redwine")){
+                        	  String json = RedWine.redwine(paths, accessToken);
+                              PrintWriter writer = resp.getWriter();
+                              writer.write(json);
+                              } 
+                      //货币识别
+                        if(ocrtype.equals("goodsratio")){
+                        	  String json = GoodsRatio.goodsratio(paths, accessToken);
+                              PrintWriter writer = resp.getWriter();
+                              writer.write(json);
+                              } 
+               
                     }
+                    
                 }
             } catch (Exception e) {
                 e.printStackTrace();
