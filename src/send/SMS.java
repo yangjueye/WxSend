@@ -14,7 +14,7 @@ public class SMS {
 	// 短信应用SDK AppKey
 	public static String appkey = "e9c408ebbe2ced419850015d9b9bfe28";
 	// 短信模板ID，需要在短信应用中申请
-	public static int templateId = 486233; // NOTE:
+	public static int templateId = 498204; // NOTE:
 											// 这里的模板ID`7839`只是一个示例，真实的模板ID需要在短信控制台中申请
 	// templateId7839对应的内容是"您的验证码是: {1}"
 	// 签名
